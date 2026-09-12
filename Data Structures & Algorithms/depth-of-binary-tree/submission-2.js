@@ -1,0 +1,31 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     constructor(val = 0, left = null, right = null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+class Solution {
+    /**
+     * @param {TreeNode} root
+     * @return {number}
+     */
+    maxDepth(root) {
+        if(!root) return 0;
+        let result = 0
+
+        let left = this.maxDepth(root.left)
+        let right = this.maxDepth(root.right)
+
+        result = 1 + Math.max(left, right)
+
+        return result
+
+
+
+    }
+}
